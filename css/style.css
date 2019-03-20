@@ -1,0 +1,43 @@
+html{
+  font-family:微軟正黑體;
+  font-size:16pt;
+}
+
+#app{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  height:100%;
+}
+.task-insert{
+  width:100%;
+  box-sizing: border-box;
+  padding:5px;
+  background-color:#fff;
+}
+
+.task-list{
+  flex-direction:column;
+  width:30%;
+  background:#0033a1;
+  text-align:left;
+  color:#fff;
+}
+
+.task-title{
+  font-size:18pt;
+  padding:10px;
+}
+.task-element{
+  padding:5px;
+  text-align:left;
+  background:#2754ba;
+}
+
+.completed{
+  text-decoration:line-through;
+}
+
+a{
+  margin-left:5px;
+}

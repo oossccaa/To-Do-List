@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>Vue To Do List  Exercise</title>
+  
+  
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+
+      <link rel="stylesheet" href="css/style.css">
+
+  
+</head>
+
+<body>
+
+  <div id="app">
+  
+  <div class="task-list">
+    <div class="task-title">To Do List</div>
+    <input type="text" 
+           class="task-insert" 
+           @keyup.enter="addElement($event.target.value)" 
+           placeholder="Add text" 
+           v-model="insertText" /> 
+    <div class="task-element" 
+         v-for="(items, index) in taskList">
+      <div v-if="!items.editing" class="show">
+        <label @click="items.completed = !items.completed"  
+               v-bind:class="[items.completed ? 'completed' : '']" >
+          {{items.text}}
+        </label>
+        <a v-on:click="editElement(index)"><i class="fa fa-edit"></i></a>
+        <a v-on:click="removeElement(index)"><i class="fa fa-close"></i></a>
+      </div>
+      <input v-else type="text" 
+             @keyup.enter="updateElement($event.target.value,index)"   
+             v-bind:value="editText" />
+    </div>
+  </div>
+</div>
+  <script src='https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js'></script>
+
+  
+
+    <script  src="js/index.js"></script>
+
+
+
+
+</body>
+
+</html>
